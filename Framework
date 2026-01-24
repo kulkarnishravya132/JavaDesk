@@ -1,0 +1,265 @@
+JavaDesk
+creates a to do list
+Time and date display
+sets alarm
+Text-based command input (console or GUI)
+Command recognition using keywords
+Open applications
+Open websites
+System info (OS, RAM, CPU – basic)
+Voice input (Speech-to-Text)-------(last stage)
+Text-to-Speech responses-------(last stage)
+
+Macro Execution:
+
+Record keyboard + mouse actions
+Save macros with a name
+Replay macros on command
+
+# JavaDesk – Voice-Based Smart Desktop Assistant with Task & Trigger Automation
+
+## 1. Introduction
+
+In today’s digital environment, users frequently perform repetitive tasks such as opening applications, organizing workspaces, and managing daily routines. Automating these tasks can significantly improve productivity and reduce manual effort.
+
+**JavaDesk** is a voice-based smart desktop assistant developed using Java. The system focuses on **task-based and mode-based automation** rather than low-level keyboard or mouse recording. Users can activate predefined or custom modes like *Study Mode* or *Work Mode*, which execute a sequence of high-level actions such as opening folders, launching applications, opening websites, and generating reports. The assistant also supports **time-based triggers** to automatically execute tasks at scheduled times.
+
+The project is designed as a mini-project with a realistic scope, strong academic value, and practical real-world relevance.
+
+---
+
+## 2. Objectives of the Project
+
+The main objectives of JavaDesk are:
+
+* To build a **voice-controlled desktop assistant** using Java
+* To implement **task-based macro automation** without recording keyboard or mouse events
+* To allow users to create and manage **custom modes (macros)**
+* To support **time-based triggers** for automatic task execution
+* To generate **usage and screen-time reports**
+* To design a clean and user-friendly **GUI-based application**
+
+---
+
+## 3. Scope of the Project
+
+The scope of the project includes:
+
+* Voice command recognition and processing
+* GUI-based interaction using JavaFX
+* High-level automation such as opening applications, folders, and websites
+* Mode-based macros (Study Mode, Work Mode, etc.)
+* Time-based triggers (e.g., daily screen time report at 7 PM)
+* Tracking assistant-driven usage data
+
+The project does **not** include:
+
+* Low-level keyboard or mouse event recording
+* System-wide application usage spying
+* OS kernel-level automation
+
+These limitations ensure system stability, security, and academic suitability.
+
+---
+
+## 4. System Architecture
+
+The JavaDesk system is divided into modular components for better maintainability and clarity.
+
+### 4.1 Major Modules
+
+* **GUI Module** – Handles user interface and interactions
+* **Voice Module** – Manages speech-to-text and text-to-speech
+* **Command Processing Module** – Interprets user commands
+* **Macro (Mode) Module** – Stores and executes task-based macros
+* **Scheduler Module** – Handles time-based triggers
+* **Analytics Module** – Tracks usage and generates reports
+* **Storage Module** – Saves macros, triggers, and usage data
+
+This modular design follows object-oriented principles and improves scalability.
+
+---
+
+## 5. Technologies Used
+
+| Feature              | Technology                       |
+| -------------------- | -------------------------------- |
+| Programming Language | Java                             |
+| GUI                  | JavaFX                           |
+| Speech-to-Text       | CMU Sphinx                       |
+| Text-to-Speech       | FreeTTS                          |
+| Automation           | java.awt.Desktop, Runtime.exec() |
+| Scheduling           | ScheduledExecutorService         |
+| Data Storage         | JSON / Text Files                |
+
+---
+
+## 6. Functional Features and Implementation
+
+### 6.1 Graphical User Interface
+
+The GUI provides a central dashboard where users can:
+
+* View recognized voice commands
+* Activate or deactivate modes
+* See system status
+* View reports
+
+**Implementation:** JavaFX components such as Stage, Scene, Buttons, TextArea, and Labels are used.
+
+---
+
+### 6.2 Voice Input and Output
+
+The assistant accepts commands through voice and provides spoken feedback.
+
+**Voice Input:**
+
+* Implemented using CMU Sphinx
+* Converts speech into text
+* Supports a limited, command-focused vocabulary
+
+**Voice Output:**
+
+* Implemented using FreeTTS
+* Used to confirm actions and provide notifications
+
+---
+
+### 6.3 Command Processing
+
+Recognized text commands are analyzed and mapped to predefined actions.
+
+**Implementation:**
+
+* Rule-based keyword matching
+* Commands like "Activate Study Mode" or "Generate report" are parsed and executed
+
+---
+
+### 6.4 Task / Mode-Based Macros
+
+A macro represents a **mode** consisting of multiple high-level actions.
+
+**Example: Study Mode**
+
+* Open study folder
+* Open notes application
+* Open reference website
+* Start study timer
+
+**Implementation:**
+
+* Each macro is stored as a list of actions
+* Actions are executed sequentially
+* Macros are stored in JSON format
+
+---
+
+### 6.5 Guided Macro Creation Using Voice
+
+Users can create custom modes using voice commands.
+
+**Example Flow:**
+
+* "Create new mode"
+* "Add open folder Documents"
+* "Add open website Wikipedia"
+* "Save mode as Study"
+
+The assistant maintains a temporary creation state until the macro is saved.
+
+---
+
+### 6.6 Trigger-Based Automation
+
+The system supports **time-based triggers** to automatically execute tasks.
+
+**Example:**
+
+* Generate daily screen time report at 7 PM
+
+**Implementation:**
+
+* ScheduledExecutorService runs in the background
+* Triggers are checked and executed at the specified time
+
+---
+
+### 6.7 Screen Time and Usage Tracking
+
+The assistant tracks productivity based on modes activated through it.
+
+**Tracked Data:**
+
+* Time spent in each mode
+* Session durations
+
+**Note:** This is assistant-based tracking, not OS-wide monitoring.
+
+---
+
+### 6.8 Daily Screen Time Report
+
+A summary report is generated automatically or on user request.
+
+**Features:**
+
+* Daily usage summary
+* GUI display of report
+* Voice notification when report is ready
+
+---
+
+## 7. Data Storage
+
+All persistent data is stored locally.
+
+**Stored Data Includes:**
+
+* Macros (modes)
+* Triggers
+* Usage statistics
+
+**Implementation:**
+
+* JSON files
+* File handling using Java I/O
+
+---
+
+## 8. Security and Safety Features
+
+* Confirmation before critical actions
+* Ability to stop macro execution
+* No low-level system hooks
+* No background spying
+
+These measures ensure safe execution and user trust.
+
+---
+
+## 9. Advantages of the System
+
+* Improves productivity
+* Easy to use with voice commands
+* Safe and stable automation approach
+* Modular and scalable design
+* Academically strong and easy to justify
+
+---
+
+## 10. Limitations
+
+* Limited to assistant-driven automation
+* Does not track all system applications
+* Depends on microphone quality for voice input
+
+---
+
+## 11. Future Enhancements
+
+* More trigger types (conditions based on inactivity)
+* Cloud-based backup of macros
+* Improved natural language processing
+* Mobile companion app
