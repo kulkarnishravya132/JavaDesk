@@ -1,0 +1,16 @@
+
+
+#Abstract
+
+JavaDesk is a voice-based smart desktop assistant developed using Java that focuses on task-based and mode-based automation to enhance user productivity. 
+The system is designed to automate common desktop activities such as opening applications, folders, and websites, managing daily routines, and generating usage reports through predefined or user-created modes like "Study Mode" or "Work Mode". 
+Unlike traditional macro tools that rely on low-level keyboard and mouse event recording, JavaDesk implements high-level automation to ensure system stability, security, and academic suitability.
+
+The assistant provides both voice and graphical user interfaces, enabling users to interact through text or speech commands. 
+Voice input is processed using speech-to-text technology, while text-to-speech is used to deliver confirmations and notifications.
+A rule-based command processing module interprets user commands and executes corresponding actions. JavaDesk also supports guided macro creation through voice interaction and time-based triggers that automatically execute tasks at scheduled intervals using a background scheduler.
+
+Additionally, the system tracks assistant-driven screen time and mode usage to generate daily productivity reports. 
+All macros, triggers, and usage data are stored locally using lightweight file-based storage.
+With its modular architecture, safe automation approach, and practical real-world relevance, JavaDesk serves as an effective and academically strong desktop automation solution developed entirely in Java.
+
